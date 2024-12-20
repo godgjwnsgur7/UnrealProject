@@ -1,23 +1,27 @@
-﻿#include "ActorTest.h"
+
+
+
+#include "JunActor.h"
 
 // Sets default values
-AActorTest::AActorTest()
+AJunActor::AJunActor()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	// 작업내용이 있다고 치자고 ㅇㅇ
+
 }
 
 // Called when the game starts or when spawned
-void AActorTest::BeginPlay()
+void AJunActor::BeginPlay()
 {
-	// 한글 주석 테스트
 	Super::BeginPlay();
 	
 }
 
 // Called every frame
-void AActorTest::Tick(float DeltaTime)
+void AJunActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 

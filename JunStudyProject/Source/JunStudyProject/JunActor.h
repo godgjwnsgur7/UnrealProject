@@ -1,19 +1,19 @@
-﻿// Fill out your copyright notice in the Description page of Project Settings.
+
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "ActorTest.generated.h"
+#include "JunActor.generated.h"
 
 UCLASS()
-class JUNSTUDYPROJECT_API AActorTest : public AActor
+class JUNSTUDYPROJECT_API AJunActor : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AActorTest();
+	AJunActor();
 
 protected:
 	// Called when the game starts or when spawned
