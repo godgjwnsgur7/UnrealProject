@@ -26,11 +26,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 protected:
-	UJunObject* Obj1;
-
-	UPROPERTY()
-	UJunObject* Obj2;
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Stat)
 	int32 Hp = 100;
 
