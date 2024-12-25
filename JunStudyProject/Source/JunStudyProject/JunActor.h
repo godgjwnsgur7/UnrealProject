@@ -7,6 +7,7 @@
 #include "JunActor.generated.h"
 
 class UJunObject;
+class UStaticMeshComponent;
 
 UCLASS()
 class JUNSTUDYPROJECT_API AJunActor : public AActor
@@ -26,12 +27,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Stat)
-	int32 Hp = 100;
-
-	UPROPERTY(VisibleAnywhere)
-	int32 Mp = 50;
-
-	UPROPERTY(VisibleAnywhere)
-	float Speed = 3.5f;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	TObjectPtr<UStaticMeshComponent> Box;
 };

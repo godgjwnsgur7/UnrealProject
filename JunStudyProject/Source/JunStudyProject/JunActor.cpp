@@ -3,6 +3,7 @@
 
 #include "JunActor.h"
 #include "JunObject.h"
+#include "Components/StaticMeshComponent.h"
 
 // Sets default values
 AJunActor::AJunActor()
@@ -10,6 +11,13 @@ AJunActor::AJunActor()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	Box = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Box"));
+
+	ConstructorHelpers::FObjectFinder<UStaticMesh> FindMesh(TEXT("/Script/Engine.StaticMesh'/Game/_Jun/SM_ChamferCube.SM_ChamferCube'"));
+	if (FindMesh.Succeeded())
+	{
+		Box->SetStaticMesh(FindMesh.Object);
+	}
 }
 
 // Called when the game starts or when spawned
