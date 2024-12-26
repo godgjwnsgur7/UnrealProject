@@ -4,6 +4,7 @@
 #include "JunActor.h"
 #include "JunObject.h"
 #include "Components/StaticMeshComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AJunActor::AJunActor()
@@ -25,6 +26,16 @@ void AJunActor::BeginPlay()
 {
 	Super::BeginPlay();
 
+	// Target = UGameplayStatics::GetActorOfClass(GetWorld(), AJunActor::StaticClass());
+
+	TArray<AActor*> Actors;
+
+	UGameplayStatics::GetAllActorsWithTag(GetWorld(), TEXT("Jun"), Actors);
+
+	if (Actors.Num() > 0)
+	{
+		Target = Actors[0];
+	}
 }
 
 // Called every frame
@@ -32,5 +43,20 @@ void AJunActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (Target != nullptr)
+	{
+		float Speed = 50.0f;
+		float Distance = DeltaTime * Speed;
+
+		FVector Location = GetActorLocation();
+
+		FVector DirectionVector = Target->GetActorLocation() - GetActorLocation();
+		DirectionVector.Normalize();
+
+		// FVector NewLocation = Location + DirectionVector * Distance;
+		// SetActorLocation(NewLocation);
+
+		AddActorWorldOffset(DirectionVector * Distance);
+	}
 }
 
