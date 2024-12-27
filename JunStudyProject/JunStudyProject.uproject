@@ -12,14 +12,6 @@
 				"Engine",
 				"CoreUObject"
 			]
-		},
-		{
-			"Name": "JunEditor",
-			"Type": "Editor",
-			"AdditionalDependencies": [
-				"Engine",
-				"CoreUObject"
-			]
 		}
 	],
 	"Plugins": [
