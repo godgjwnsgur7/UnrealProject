@@ -7,6 +7,11 @@ public class JunStudyProject : ModuleRules
 	public JunStudyProject(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
+		PublicIncludePaths.AddRange(new string[]
+		{
+			"JunStudyProject",
+		});
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput" });
 
